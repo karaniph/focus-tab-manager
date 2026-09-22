@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "FocusTab Manager",
+  "version": "1.1.0",
+  "description": "Group tabs by site, collapse distractions & freeze idle tabs to save memory. 100% local, no account.",
+  "permissions": ["tabs", "tabGroups", "storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "FocusTab Manager — declutter in 1 click",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Open FocusTab Manager"
+    },
+    "declutter": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+D",
+        "mac": "Command+Shift+D"
+      },
+      "description": "De-clutter & freeze tabs without opening popup"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}

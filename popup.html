@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FocusTab Manager</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="hero-copy">
+            <p class="eyebrow">FocusTab Manager</p>
+            <h1>Declutter tabs in 1 click.</h1>
+            <p class="subcopy" id="stats-line">Loading tabs…</p>
+          </div>
+          <div class="ram-ring" id="ram-ring" aria-label="Estimated RAM saved">
+            <div class="ram-ring__spin"></div>
+            <div class="ram-ring__core">
+              <span class="ram-ring__label">Est. saved</span>
+              <strong class="ram-ring__value">0 MB</strong>
+              <span class="ram-ring__hint">~60 MB / frozen tab</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="primary-action" id="declutter-btn" type="button">
+          De-Clutter &amp; Freeze
+        </button>
+        <div class="action-row">
+          <button type="button" id="undo-btn" disabled>Undo</button>
+          <button type="button" id="collapse-btn">Collapse inactive</button>
+          <button type="button" id="expand-btn">Expand all</button>
+        </div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="groups">
+        <div class="section-head">
+          <h2>Your tabs</h2>
+          <span class="section-meta" id="tab-count"></span>
+        </div>
+        <label class="search">
+          <input type="search" id="search" placeholder="Search tabs…" autocomplete="off">
+        </label>
+        <div class="group-list" id="tab-list" role="list"></div>
+      </section>
+
+      <footer class="footer">
+        <span class="trust">100% local · No account · No tracking</span>
+        <span class="hint">Tip: <kbd>Ctrl+Shift+D</kbd> freezes without opening popup</span>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
